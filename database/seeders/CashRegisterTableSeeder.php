@@ -1,0 +1,54 @@
+<?php
+namespace Database\Seeders;
+
+use App\Models\CashRegister;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class CashRegisterTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        CashRegister::query()->truncate();
+
+        DB::table('cash_registers')->insert([
+            [
+                'title' => 'Main Cash Register',
+                'branch_id' => 1,
+                'sales_invoice_id' => 2,
+                'receiving_invoice_id' => 4,
+                'created_by' => 1,
+                'created_at' =>now()
+            ],
+            [
+                'title' => 'Main Cash Register',
+                'branch_id' => 2,
+                'sales_invoice_id' => 2,
+                'receiving_invoice_id' => 4,
+                'created_by' => 1,
+                'created_at' =>now()
+            ],
+            [
+                'title' => 'Main Cash Register',
+                'branch_id' => 3,
+                'sales_invoice_id' => 2,
+                'receiving_invoice_id' => 4,
+                'created_by' => 1,
+                'created_at' =>now()
+            ],
+            [
+                'title' => 'Main Cash Register',
+                'branch_id' => 4,
+                'sales_invoice_id' => 2,
+                'receiving_invoice_id' => 4,
+                'created_by' => 1,
+                'created_at' =>now()
+            ],
+        ]);
+    }
+}
